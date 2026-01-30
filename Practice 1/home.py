@@ -1,2 +1,5 @@
 print("my firt print")
 print("asdasdfasfasf")
+print("Go")
+print("Hello, Mars!")
+print("c# is better")

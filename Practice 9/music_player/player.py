@@ -16,7 +16,7 @@ class MusicPlayer:
         self.playlist = self._scan_tracks()
         
         if not self.playlist:
-            print("⚠️ Нет доступных аудиофайлов в папке 'music/'")
+            print("Нет доступных аудиофайлов в папке 'music/'")
 
     def _is_valid_audio_file(self, filepath):
         try:
@@ -59,9 +59,9 @@ class MusicPlayer:
             self.is_paused = False
             self.elapsed_time = 0.0
             self.last_update_time = pygame.time.get_ticks()
-            print(f"▶️ Playing: {self._get_track_name(self.playlist[self.current_index])}")
+            print(f"Playing: {self._get_track_name(self.playlist[self.current_index])}")
         except Exception as e:
-            print(f"❌ Ошибка воспроизведения: {e}")
+            print(f"Ошибка воспроизведения: {e}")
             self.is_playing = False
             if len(self.playlist) > 1:
                 self.next_track()
@@ -72,12 +72,12 @@ class MusicPlayer:
         if self.is_playing and not self.is_paused:
             pygame.mixer.music.pause()
             self.is_paused = True
-            print("⏸️ Paused")
+            print("Paused")
         elif self.is_paused:
             pygame.mixer.music.unpause()
             self.is_paused = False
             self.last_update_time = pygame.time.get_ticks()
-            print("▶️ Resumed")
+            print("Resumed")
 
     def stop(self):
         pygame.mixer.music.stop()

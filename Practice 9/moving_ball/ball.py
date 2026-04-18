@@ -1,33 +1,30 @@
 import pygame
 
 class Ball:
-    def __init__(self, screen_width: int, screen_height: int):
+    def __init__(self, width, height):
+        self.x = width // 2
+        self.y = height // 2
+
         self.radius = 25
         self.color = (255, 0, 0)
-        self.step = 20
-        self.screen_width = screen_width
-        self.screen_height = screen_height
-        self.x = screen_width // 2
-        self.y = screen_height // 2
+        self.speed = 5
 
-    def draw(self, screen: pygame.Surface):
-        pygame.draw.circle(screen, self.color, (int(self.x), int(self.y)), self.radius)
+        self.width = width
+        self.height = height
 
-    def move(self, direction: int):
-        new_x, new_y = self.x, self.y
+    def update(self, keys):
+        if keys[pygame.K_LEFT]:
+            self.x -= self.speed
+        if keys[pygame.K_RIGHT]:
+            self.x += self.speed
+        if keys[pygame.K_UP]:
+            self.y -= self.speed
+        if keys[pygame.K_DOWN]:
+            self.y += self.speed
 
-        if direction == pygame.K_LEFT:
-            new_x -= self.step
-        elif direction == pygame.K_RIGHT:
-            new_x += self.step
-        elif direction == pygame.K_UP:
-            new_y -= self.step
-        elif direction == pygame.K_DOWN:
-            new_y += self.step
-        else:
-            return
+        # границы экрана
+        self.x = max(self.radius, min(self.x, self.width - self.radius))
+        self.y = max(self.radius, min(self.y, self.height - self.radius))
 
-        if self.radius <= new_x <= self.screen_width - self.radius:
-            self.x = new_x
-        if self.radius <= new_y <= self.screen_height - self.radius:
-            self.y = new_y
+    def draw(self, screen):
+        pygame.draw.circle(screen, self.color, (self.x, self.y), self.radius)

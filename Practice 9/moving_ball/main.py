@@ -2,34 +2,29 @@ import pygame
 import sys
 from ball import Ball
 
-def main():
-    pygame.init()
+pygame.init()
 
-    SCREEN_WIDTH, SCREEN_HEIGHT = 800, 600
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption("Moving Ball Game")
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Simple Ball")
 
-    ball = Ball(SCREEN_WIDTH, SCREEN_HEIGHT)
+ball = Ball(800, 600)
+clock = pygame.time.Clock()
 
-    clock = pygame.time.Clock()
-    FPS = 60
+running = True
 
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            elif event.type == pygame.KEYDOWN:
-                ball.move(event.key)
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
 
-        screen.fill((255, 255, 255))
-        ball.draw(screen)
-        pygame.display.flip()
+    keys = pygame.key.get_pressed()
+    ball.update(keys)
 
-        clock.tick(FPS)
+    screen.fill((255, 255, 255))
+    ball.draw(screen)
 
-    pygame.quit()
-    sys.exit()
+    pygame.display.flip()
+    clock.tick(60)
 
-if __name__ == "__main__":
-    main()
+pygame.quit()
+sys.exit()

@@ -5,19 +5,15 @@ class MickeyClock:
     def __init__(self, width, height):
         self.center = pygame.Vector2(width // 2, height // 2)
 
-        # Загружаем изображение
         original = pygame.image.load("images/mickey_hand.png").convert_alpha()
 
-        # Масштаб без искажения
         self.sec_hand = pygame.transform.rotozoom(original, 0, 0.5)
         self.min_hand = pygame.transform.rotozoom(original, 0, 0.7)
         self.hour_hand = pygame.transform.rotozoom(original, 0, 0.4)
 
-        # Зеркалим для "левой руки"
         self.sec_hand_left = pygame.transform.flip(self.sec_hand, True, False)
         self.hour_hand_left = pygame.transform.flip(self.hour_hand, True, False)
 
-        # Смещения (НАСТРАИВАЙ!)
         self.sec_offset = pygame.Vector2(0, -70)
         self.min_offset = pygame.Vector2(0, -100)
         self.hour_offset = pygame.Vector2(0, -50)
@@ -43,10 +39,8 @@ class MickeyClock:
         surface.blit(rotated_image, rect)
 
     def draw_dial(self, surface):
-        # Круг часов
         pygame.draw.circle(surface, (220, 220, 220), self.center, 200, 3)
 
-        # Деления
         for i in range(60):
             angle = i * 6
             direction = pygame.Vector2(0, -1).rotate(angle)
@@ -66,17 +60,10 @@ class MickeyClock:
         self.sec_angle, self.min_angle, self.hour_angle = self.get_angles()
 
     def draw(self, surface):
-        # Циферблат
         self.draw_dial(surface)
 
-        # Центр
         pygame.draw.circle(surface, (255, 255, 255), self.center, 6)
 
-        # ЧАСЫ (снизу)
         self.draw_hand(surface, self.hour_hand_left, self.hour_angle, self.hour_offset)
-
-        # МИНУТЫ
         self.draw_hand(surface, self.min_hand, self.min_angle, self.min_offset)
-
-        # СЕКУНДЫ (сверху)
         self.draw_hand(surface, self.sec_hand_left, self.sec_angle, self.sec_offset)

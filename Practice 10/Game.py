@@ -85,8 +85,12 @@ class Coin(pygame.sprite.Sprite):
         self.reset()
 
     def reset(self):
-        """Respawn coin at a random horizontal position at the top"""
-        self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
+        """Respawn coin at random position that doesn't overlap enemy"""
+        while True:
+            self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
+            # Простейшая проверка: если нет пересечения с врагом — выходим из цикла
+            if not self.rect.colliderect(E1.rect):
+                break
 
     def move(self):
         self.rect.move_ip(0, SPEED)
@@ -96,7 +100,7 @@ class Coin(pygame.sprite.Sprite):
 # --- INSTANTIATION ---
 P1 = Player()
 E1 = Enemy()
-C1 = Coin()
+C1 = Coin()  # Создаём монету ПОСЛЕ врага, чтобы E1 был определён в reset()
 
 # --- SPRITE GROUPS ---
 # Groups allow for bulk updates and easy collision detection

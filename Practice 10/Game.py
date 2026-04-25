@@ -88,7 +88,7 @@ class Coin(pygame.sprite.Sprite):
         """Respawn coin at random position that doesn't overlap enemy"""
         while True:
             self.rect.center = (random.randint(40, SCREEN_WIDTH - 40), 0)
-            # Простейшая проверка: если нет пересечения с врагом — выходим из цикла
+            # Check coin and enemy collision
             if not self.rect.colliderect(E1.rect):
                 break
 

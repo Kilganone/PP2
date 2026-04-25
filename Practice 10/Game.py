@@ -100,7 +100,7 @@ class Coin(pygame.sprite.Sprite):
 # --- INSTANTIATION ---
 P1 = Player()
 E1 = Enemy()
-C1 = Coin()  # Создаём монету ПОСЛЕ врага, чтобы E1 был определён в reset()
+C1 = Coin()
 
 # --- SPRITE GROUPS ---
 # Groups allow for bulk updates and easy collision detection

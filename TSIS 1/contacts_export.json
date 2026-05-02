@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Alice Johnson",
+        "email": "alice.work@gmail.com",
+        "birthday": "2001-05-15",
+        "group": "Friend",
+        "created_at": "2026-05-02T09:50:52.150057",
+        "phones": [
+            {
+                "phone": "+77011234567",
+                "type": "mobile"
+            },
+            {
+                "phone": "+77271234567",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "name": "Bob Smith",
+        "email": "bob@company.com",
+        "birthday": "1999-09-21",
+        "group": "Work",
+        "created_at": "2026-05-02T09:50:52.150057",
+        "phones": [
+            {
+                "phone": "+77017654321",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Carol White",
+        "email": "carol@yahoo.com",
+        "birthday": "2002-12-03",
+        "group": "Family",
+        "created_at": "2026-05-02T09:50:52.150057",
+        "phones": [
+            {
+                "phone": "+77019876543",
+                "type": "home"
+            }
+        ]
+    },
+    {
+        "name": "Krone",
+        "email": null,
+        "birthday": null,
+        "group": "Other",
+        "created_at": "2026-05-02T11:17:19.721864",
+        "phones": [
+            {
+                "phone": "87054219654",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Rasul",
+        "email": "rasul@gmail.com",
+        "birthday": "2006-01-16",
+        "group": "Family",
+        "created_at": "2026-05-02T11:14:51.744414",
+        "phones": [
+            {
+                "phone": "87054074261",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Ruslan",
+        "email": null,
+        "birthday": null,
+        "group": "Other",
+        "created_at": "2026-05-02T11:17:19.721864",
+        "phones": [
+            {
+                "phone": "83256011232",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "TSIS1 Test Alpha",
+        "email": "alpha_updated@gmail.com",
+        "birthday": "2000-01-02",
+        "group": "Family",
+        "created_at": "2026-05-02T09:51:28.578305",
+        "phones": [
+            {
+                "phone": "+77019990001",
+                "type": "mobile"
+            },
+            {
+                "phone": "+77019990002",
+                "type": "home"
+            }
+        ]
+    }
+]

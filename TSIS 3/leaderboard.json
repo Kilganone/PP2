@@ -15,6 +15,11 @@
         "distance": 1178
     },
     {
+        "name": "Legend",
+        "score": 313,
+        "distance": 1535
+    },
+    {
         "name": "s",
         "score": 254,
         "distance": 946
@@ -35,18 +40,13 @@
         "distance": 1108
     },
     {
+        "name": "Legend",
+        "score": 163,
+        "distance": 639
+    },
+    {
         "name": "s",
         "score": 146,
         "distance": 661
-    },
-    {
-        "name": "\u0444\u044b\u0432",
-        "score": 134,
-        "distance": 543
-    },
-    {
-        "name": "s",
-        "score": 131,
-        "distance": 411
     }
 ]
